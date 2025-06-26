@@ -13,7 +13,9 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as admin from "../admin.js";
 import type * as counter from "../counter.js";
+import type * as security from "../security.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -24,7 +26,9 @@ import type * as counter from "../counter.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  admin: typeof admin;
   counter: typeof counter;
+  security: typeof security;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
